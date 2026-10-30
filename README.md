@@ -6,6 +6,8 @@
 
 ## Открыть
 
+**Сайт: [deoreru.github.io/residential-sales-dashboard](https://deoreru.github.io/residential-sales-dashboard/)**
+
 Сайт публикуется через **GitHub Pages**, из ветки `main`, папка `/ (root)`.
 
 Можно также скачать `index.html` и открыть его в браузере. Данные встроены, установка библиотек и подключение к интернету не требуются.
