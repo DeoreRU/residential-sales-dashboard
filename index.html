@@ -160,7 +160,7 @@ main{padding-top:22px}
 <p class="prototype-note">Локальная проба · виды из окон в квартирах · без публикации</p><header><h1>Продажи ЖК: какие квартиры находят покупателя</h1><p class="subtitle">Март — сентябрь 2026</p></header>
 <div class="filters"><div class="group" id="building-buttons"><span class="filter-label">Корпус</span></div><div class="group" id="room-buttons"><span class="filter-label">Комнат</span></div><div class="group" id="status-buttons"><span class="filter-label">Сделка</span></div><label class="group"><span class="filter-label">Вид</span><select id="view"><option value="">Все виды</option></select></label><button class="reset" id="reset">Сбросить всё</button></div>
 <div class="selection" id="selection" aria-live="polite"></div><p class="scope-note" id="scope-note" hidden></p>
-<div class="metrics"><div class="metric"><div class="metric-label">Выбранные сделки</div><div class="metric-value" id="k-sales"></div><div id="sales-spark" class="kpi-spark"></div><div class="spark-caption">По неделям · *последняя — 3 дня</div><div class="metric-context" id="k-sales-note"></div><div id="trend" class="metric-trend" hidden></div></div><div class="metric"><div class="metric-label">Сумма сделок</div><div class="metric-value" id="k-money"></div><div id="money-spark" class="kpi-spark"></div><div class="spark-caption">По неделям · *последняя — 3 дня</div><div class="metric-context">По выбранным сделкам, после скидок</div></div><div class="metric"><div class="metric-label">Предоставленные скидки</div><div class="metric-value" id="k-discount"></div><div id="discount-spark" class="kpi-spark"></div><div class="spark-caption">Скидка, % · *последняя — 3 дня</div><div class="metric-context" id="k-discount-note"></div></div><div class="metric"><div class="metric-label">Без даты за весь период</div><div class="metric-value" id="k-stock"></div><div class="metric-context">В текущей группе квартир</div></div></div>
+<div class="metrics"><div class="metric"><div class="metric-label">Выбранные сделки</div><div class="metric-value" id="k-sales"></div><div id="sales-spark" class="kpi-spark"></div><div class="spark-caption">По неделям · *последняя — 3 дня</div><div class="metric-context" id="k-sales-note"></div><div id="trend" class="metric-trend" hidden></div></div><div class="metric"><div class="metric-label">Сумма сделок</div><div class="metric-value" id="k-money"></div><div id="money-spark" class="kpi-spark"></div><div class="spark-caption">По неделям · *последняя — 3 дня</div><div class="metric-context">По выбранным сделкам, после скидок</div><div id="money-trend" class="metric-trend" hidden></div></div><div class="metric"><div class="metric-label">Предоставленные скидки</div><div class="metric-value" id="k-discount"></div><div id="discount-spark" class="kpi-spark"></div><div class="spark-caption">Скидка, % · *последняя — 3 дня</div><div class="metric-context" id="k-discount-note"></div></div><div class="metric"><div class="metric-label">Без даты за весь период</div><div class="metric-value" id="k-stock"></div><div class="metric-context">В текущей группе квартир</div></div></div>
 <div class="layout"><section class="main-panel"><div class="panel-header"><h2>Квартиры по корпусам и этажам</h2><button type="button" id="views-toggle" class="view-toggle" aria-pressed="false" aria-controls="houses view-legend plot-help">Виды из окон</button><span class="unit">Доли сделок · март–сентябрь</span></div><div class="main-legend"><div class="status-keys"><span class="legend-caption">1 знак = 1 квартира</span><span><i class="key-square"></i>С датой</span><span><i class="key-square hollow"></i>Без даты</span><span><i class="key-square out"></i>Вне выбора</span></div><div class="area-key"><span>Ширина — площадь</span><div id="area-key"></div></div></div><div id="view-legend" class="view-legend" hidden aria-label="Пиктограммы видов из окон"><span class="view-caption">Вид из окна</span><span><svg aria-hidden="true"><use href="#vi-garden"></use></svg>Сад</span><span><svg aria-hidden="true"><use href="#vi-yard"></use></svg>Двор</span><span><svg aria-hidden="true"><use href="#vi-street"></use></svg>Улица</span><span><svg aria-hidden="true"><use href="#vi-windows"></use></svg>Окна ЖК</span><span><svg aria-hidden="true"><use href="#vi-river"></use></svg>Река</span><span><svg aria-hidden="true"><use href="#vi-ring"></use></svg>Садовое</span></div><div class="encoding-note" id="encoding-note">Цвет — комнатность · корпус и комнатность можно выбрать в панели сверху</div><p class="plot-help" id="plot-help" hidden></p><div class="plot-scroll"><div id="houses"></div></div><div class="detail" id="detail" aria-live="polite" hidden></div></section>
 <aside class="sidebar"><section><div class="panel-header"><h2>Сделки по неделям</h2><span class="unit">квартир</span></div><p class="panel-note">Выбор недели · Shift — диапазон</p><div id="weekly"></div><p class="week-footnote">28–30 сентября — неполная неделя.</p></section><section><div class="panel-header"><h2 id="rooms-title">Доля сделок за весь период</h2></div><p class="panel-note" id="rooms-context">Проданные / все квартиры группы.</p><div id="rooms-chart"></div></section><section><div class="panel-header"><h2>Сделки менеджеров</h2><span class="unit">млрд ₽ · дни — медиана</span></div><p class="panel-note" id="managers-context" hidden>Сравнение всех менеджеров. Клик — выбор сотрудника.</p><div id="managers"></div><p class="manager-advice" id="manager-advice"></p></section></aside></div>
 <details class="extra-analysis"><summary>Планировки с меньшей долей сделок и выводы</summary><div class="bottom"><section><h2>Где меньше сделок за весь период</h2><p class="panel-note">Март–сентябрь · группы от 5 квартир · клик — фильтр.</p><div id="plans"></div></section><section><h2>Что видно в этой группе</h2><p class="hypothesis" id="hypothesis"></p></section></div>
@@ -282,22 +282,25 @@ function houses(){
 }
 
 function periodComparison(){
- const host=$('trend'),selectedWeeks=[...state.weeks].sort();
- host.replaceChildren();host.hidden=!selectedWeeks.length;
+ const hosts=[$('trend'),$('money-trend')],selectedWeeks=[...state.weeks].sort();
+ hosts.forEach(host=>{host.replaceChildren();host.hidden=!selectedWeeks.length});
  if(!selectedWeeks.length)return;
- const line=value=>{const n=document.createElement('span');n.textContent=value;host.append(n)};
+ const line=(host,value)=>{const n=document.createElement('span');n.textContent=value;host.append(n)};
  if(selectedWeeks.some((w,i)=>i&&ts(w)-ts(selectedWeeks[i-1])!==7*DAY)){
-  line('Для сравнения выберите непрерывный диапазон недель.');return;
+  hosts.forEach(host=>line(host,'Для сравнения выберите непрерывный диапазон недель.'));return;
  }
  const start=ts(selectedWeeks[0]),end=Math.min(ts(selectedWeeks.at(-1))+6*DAY,ts('2026-09-30'));
  const days=Math.round((end-start)/DAY)+1,previousStart=start-days*DAY,previousEnd=start-DAY;
  const short=t=>date(iso(t)).slice(0,5),range=(a,b)=>short(a)+(a===b?'':'–'+short(b));
- line(range(start,end)+' / '+range(previousStart,previousEnd));
- if(previousStart<ts('2026-03-02')){line('Нет полных данных за предыдущий период.');return;}
- const context=chosen(['weeks']).filter(d=>d.date),current=context.filter(d=>ts(d.date)>=start&&ts(d.date)<=end).length,previous=context.filter(d=>ts(d.date)>=previousStart&&ts(d.date)<=previousEnd).length;
- const change=previous?((current>=previous?'+':'')+Math.round((current/previous-1)*100)+'%'):null;
- const last=previous%10,lastTwo=previous%100,unit=lastTwo>=11&&lastTwo<=14?'сделок':last===1?'сделка':last>=2&&last<=4?'сделки':'сделок';
- line('Предыдущий период: '+previous+' '+unit+(change?' · '+change:''));
+ hosts.forEach(host=>line(host,range(start,end)+' / '+range(previousStart,previousEnd)));
+ if(previousStart<ts('2026-03-02')){hosts.forEach(host=>line(host,'Нет полных данных за предыдущий период.'));return;}
+ const context=chosen(['weeks']).filter(d=>d.date),currentRows=context.filter(d=>ts(d.date)>=start&&ts(d.date)<=end),previousRows=context.filter(d=>ts(d.date)>=previousStart&&ts(d.date)<=previousEnd);
+ const current=currentRows.length,previous=previousRows.length;
+ const change=(now,before)=>before?((now>=before?'+':'')+Math.round((now/before-1)*100)+'%'):null;
+ const countChange=change(current,previous),last=previous%10,lastTwo=previous%100,unit=lastTwo>=11&&lastTwo<=14?'сделок':last===1?'сделка':last>=2&&last<=4?'сделки':'сделок';
+ line(hosts[0],'Предыдущий период: '+previous+' '+unit+(countChange?' · '+countChange:''));
+ const previousMoney=sum(previousRows,'amount'),moneyChange=change(sum(currentRows,'amount'),previousMoney);
+ line(hosts[1],'Предыдущий период: '+money(previousMoney)+(moneyChange?' · '+moneyChange:''));
 }
 
 function kpiSparklines(){
@@ -309,7 +312,7 @@ function kpiSparklines(){
  ];
  for(const s of series){
   const host=$(s.id);host.replaceChildren();
-  const W=Math.max(100,Math.floor(host.clientWidth)),H=52,T=4,B=35,step=W/weeks.length,max=Math.max(.01,...s.values.filter(n=>n!==null))*1.05;
+  const W=Math.max(100,Math.floor(host.clientWidth)),H=s.id==='money-spark'?72:52,T=4,B=s.id==='money-spark'?55:35,step=W/weeks.length,max=Math.max(.01,...s.values.filter(n=>n!==null))*1.05;
   const x=i=>(i+.5)*step,y=n=>B-n/max*(B-T);
   const svg=el('svg',{width:W,height:H,viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':s.label+' по неделям. Без заливки; неделя 28–30 сентября — пунктир. Разрыв означает отсутствие сделок для расчёта.'},host);
   if(state.weeks.size)for(let i=0;i<weeks.length;i++)if(state.weeks.has(weeks[i]))el('rect',{x:i*step,y:0,width:step,height:B+1,fill:'#f0f2f4'},svg);
